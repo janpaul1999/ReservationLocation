@@ -1,6 +1,22 @@
 package sample;
 
-import javafx.application.Application;
+import SelfReservationContext.Adapter.RestService;
+import SelfReservationContext.Application.ReservationApplicationService;
+import SelfReservationContext.Data.ReservationRepository;
+
+public class Main {
+
+    public static void main(String[] args) {
+        ReservationRepository reservationRepository = new ReservationRepository();
+        ReservationApplicationService applicationService = new ReservationApplicationService(reservationRepository);
+        RestService restService = new RestService(applicationService);
+
+        restService.closedDesk(10L);
+    }
+
+}
+
+/* import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,4 +36,4 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-}
+} */
