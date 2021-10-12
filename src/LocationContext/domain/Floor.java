@@ -6,5 +6,4 @@ public class Floor {
     private Long floorId;
     private int floorNr;
     private boolean currentleyUsable;
-    private List<Room> rooms;
 }
